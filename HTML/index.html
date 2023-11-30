@@ -6,115 +6,60 @@
     <title>SyntWWWave</title>
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
-<body class="">
-    <h1 class="TITLE">SyntWWWave</h1>
+<body class="body">
+    <div class="syntwave-sun"></div>
+    <div class="body_syntwave-grid"></div>
+
     <div class="body__inner container">
+        <h1 class="TITLE">SyntWWWaver</h1>
 
-        <div class="register__form" id="register__form">
-            <form class="login_page_form" action="#" method="">
+        <form class="login__register__form" action="" id="register__form">
 
-                <h2>SIGN UP</h2>
+            <h2>REGISTER</h2>
 
-                <div class="input_box">
-                    <input type="text" name="login" id="login" placeholder="login" required autocapitalize="characters" autocomplete="off">
-                </div>
+            <div class="input__box">
+                <input class="email input" type="text" name="email" id="emailRegister" placeholder="Email" autocomplete="off">
+            </div>
 
-                <div class="input_box">
-                    <input type="email" name="email" id="email" placeholder="email" required autocapitalize="characters" autocomplete="off">
-                </div>
+            <div class="input__box">
+                <input class="password input" type="password" name="password" id="password_register" placeholder="Password" >
+                <div class="show__password"></div>
+                <div class="password__check"></div>
+            </div>
 
-                <div class="input_box">
-                    <input type="password" name="password" id="password" placeholder="password" required>
-                    <div class="password_show">
-                        <svg class="eye" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 width="800px" height="800px" viewBox="0 0 442.04 442.04"
-	 xml:space="preserve">
-<g>
-	<g>
-		<path d="M221.02,341.304c-49.708,0-103.206-19.44-154.71-56.22C27.808,257.59,4.044,230.351,3.051,229.203
-			c-4.068-4.697-4.068-11.669,0-16.367c0.993-1.146,24.756-28.387,63.259-55.881c51.505-36.777,105.003-56.219,154.71-56.219
-			c49.708,0,103.207,19.441,154.71,56.219c38.502,27.494,62.266,54.734,63.259,55.881c4.068,4.697,4.068,11.669,0,16.367
-			c-0.993,1.146-24.756,28.387-63.259,55.881C324.227,321.863,270.729,341.304,221.02,341.304z M29.638,221.021
-			c9.61,9.799,27.747,27.03,51.694,44.071c32.83,23.361,83.714,51.212,139.688,51.212s106.859-27.851,139.688-51.212
-			c23.944-17.038,42.082-34.271,51.694-44.071c-9.609-9.799-27.747-27.03-51.694-44.071
-			c-32.829-23.362-83.714-51.212-139.688-51.212s-106.858,27.85-139.688,51.212C57.388,193.988,39.25,211.219,29.638,221.021z"/>
-	</g>
-	<g>
-		<path d="M221.02,298.521c-42.734,0-77.5-34.767-77.5-77.5c0-42.733,34.766-77.5,77.5-77.5c18.794,0,36.924,6.814,51.048,19.188
-			c5.193,4.549,5.715,12.446,1.166,17.639c-4.549,5.193-12.447,5.714-17.639,1.166c-9.564-8.379-21.844-12.993-34.576-12.993
-			c-28.949,0-52.5,23.552-52.5,52.5s23.551,52.5,52.5,52.5c28.95,0,52.5-23.552,52.5-52.5c0-6.903,5.597-12.5,12.5-12.5
-			s12.5,5.597,12.5,12.5C298.521,263.754,263.754,298.521,221.02,298.521z"/>
-	</g>
-	<g>
-		<path d="M221.02,246.021c-13.785,0-25-11.215-25-25s11.215-25,25-25c13.786,0,25,11.215,25,25S234.806,246.021,221.02,246.021z"/>
-	</g>
-</g>
-                        </svg>
-                    </div>
-                </div>
+            <div class="sumbit__button">
+                <button class="btn btn-design1">SIGN UP</button>
+              </div>
+            <a href="#" class="link__to__register" id="link_register_to_login">Already registered?</a>
+            
+        </form>
 
-                <input class="submit_button" type="submit" name="register" id="register" value="Sign up">
 
-                <div class="password_difficult"></div>
-                <a class="login_link" href="#">Already have an account?</a>
-            </form>
-        </div>
-        
-        <div class="login__form" id="login__form">
-            <form class="login_page_form" action="#" method="">
-        </div>
+        <!-- LOGIN FORM/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <form class="login__register__form" action="" id="login__form">
+
+            <h2>LOG IN</h2>
+
+            <div class="input__box">
+                <input class="email input" type="text" name="email" id="email" placeholder="Email" autocomplete="off">
+            </div>
+
+            <div class="input__box">
+                <input class="password input" type="password" name="password" id="password" placeholder="Password" >
+                <div class="show__password"></div>
+                <div class="password__check"></div>
+            </div>
+
+            <!-- <button class="submit__button btn btn-design1" type="submit">LOG IN</button> -->
+            <div class="sumbit__button">
+                <button class="btn btn-design1">SIGN IN</button>
+              </div>
+            <a href="#" class="link__to__register" id="link_login_to_register">Not registered?</a>
+            
+        </form>
+    
+
     </div>
-
-    <div class="grid">
-
-        <div class="vertical_lines lines">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <div class="horisontal_lines lines">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        
-    </div>
-
     <script src="/JS/script.js"></script>
 </body>
 </html>
