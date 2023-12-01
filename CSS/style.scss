@@ -17,6 +17,7 @@
  $mainBlue: rgb(5, 245, 249);
  $darkerBlue: rgb(0, 205, 208);
  $yellowLike: rgb(255, 104, 62);
+ $pinkLike: rgba(153, 0, 95, 1);
 
 
 // MIXINS
@@ -181,17 +182,7 @@
   linear-gradient(90deg, transparent 0px, $linecolor $linewidth, transparent $spread);
   }
 
-  // @mixin gridRotated{
-  //   transform: rotate3d(1, 0, 0, 80deg);
-  //   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px); 
-  //   background-size: 2em 3em, 3em 7em;
-  //   background-color: black;
-  //   background-position: center;
-  //   top: 10%;
-  //   height: 100%;
-  //   position: absolute;
-  //   width: 200%;
-  // }
+
   @mixin gridRotated{
     transform: rotate3d(1, 0, 0, 80deg);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px); 
@@ -206,7 +197,7 @@
 
   @mixin gridFlat{
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px); 
-      background-size: 4em 4em, 4em 4em;
+      background-size: 5% 10%, 5% 10%;
       background-color: black;
       background-position: center;
       height: 100%;
@@ -223,8 +214,7 @@
         height: 3px;
         bottom: 0;
         transition: all 0.3s ease;
-        // background-color: rgb(13, 0, 255);
-        // box-shadow: 0 0 10px 3px rgb(38, 255, 0);
+
     }
 }
 
@@ -242,7 +232,7 @@
     width: 100%;
 }
 
-  body{
+  body {
     position: relative;
     height: 100vh;
     background-color: rgb(11, 11, 11);
@@ -252,17 +242,118 @@
     justify-content: center;
     
     &:before {
-     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(209,0,177,0.5) 90%);     
+     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
      content: '';
      height: 100%;
      position: absolute;
      width: 100%;
     }
+
+    .music_Box{
+      position: absolute;
+      top: 68%;
+      left: 48%;
+      z-index: 0;
+      -webkit-transform: translate(-50%, -50%);
+      /* transform: translate(-50%, -50%); */
+      transform: scaleY(130%) scaleX(110%) rotate(12deg) translate(-50%, -50%);
+
+      .audio_Box{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        // filter: blur(11px) contrast(10);
+        mix-blend-mode: screen;
+        .visual{
+          position: relative;
+          width: 370px;
+          height: 370px;
+          border-radius: 50%;
+          // background: #fff;
+          // transition: 0.5s;
+          transform: scale(1.2) rotate(90deg);
+        }
+        
+      }
+
+    }
+  }
+
+  .play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    // background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  
+    .btn-play{
+      border-left: 80px solid green;
+      border-bottom: 50px solid transparent;
+      border-top: 50px solid transparent;
+      cursor: pointer;
+    }
+    .btn-pause{
+      border-right: 20px solid green;
+      border-left: 20px solid green;
+      height: 100px;
+      width: 75px;
+      cursor: pointer;
+
+    }
+    
+  }
+
+  .element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 0px;
+    height: 33px;
+    border-radius: 50%;
+    /* border-top: 24px solid #fff; */
+    /* border-right: 20px solid transparent; */
+    /* border-left: 20px solid transparent; */
+    -webkit-transform-origin: top left;
+    -webkit-box-shadow: 0px 0px 30px 21px rgb(255, 104, 62);
+    box-shadow: 0px -31px 41px 29px rgb(255, 104, 62);
+    transform-origin: top left;
+    -webkit-transition: 0.25s;
+    transition: 0.2s;
+
   }
 
   .body_syntwave-grid{
-    @include gridRotated();
-    // @include gridFlat();
+
+    // display: none;
+
+    user-select: none;
+    z-index: 0;
+    // @include gridRotated();
+    @include gridFlat();
+
+    animation: none;
+
+    @keyframes gridAnimation {
+      0%{
+        background-position: 0% 0%;
+      }
+      100%{
+        background-position: 0% 100%;
+      }
+    }
+
+
+
       
       &:after {
         background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0, 0, 0, 0.733) 95%);
@@ -273,7 +364,7 @@
        }
       
       &:before {
-       background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(209,0,177,0.5) 90%);     
+       background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
        content: '';
        height: 100%;
        position: absolute;
@@ -283,6 +374,11 @@
   
 
   .syntwave-sun{
+    user-select: none;
+    // opacity: 0.5;
+    filter: blur(20px);
+    border: 40px solid black;
+
     position: absolute;
     background-color: $yellowLike;
     width: 370px;
@@ -291,12 +387,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    // border: 3px solid red;
-    box-shadow: 0px 0px 12px 12px rgba(209,0,177,0.5);
+
+    z-index: 1;
+    
 
   }
 
   .body__inner{
+
+    // display: none;
+
     margin: 0 auto;
     height: 100vh;
     width: 100%;

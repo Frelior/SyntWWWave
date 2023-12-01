@@ -97,24 +97,128 @@ body {
           justify-content: center;
 }
 body:before {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(209, 0, 177, 0.5) 90%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(153, 0, 95, 0.5) 90%);
   content: "";
   height: 100%;
   position: absolute;
   width: 100%;
 }
+body .music_Box {
+  position: absolute;
+  top: 68%;
+  left: 48%;
+  z-index: 0;
+  -webkit-transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
+  transform: scaleY(130%) scaleX(110%) rotate(12deg) translate(-50%, -50%);
+}
+body .music_Box .audio_Box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  mix-blend-mode: screen;
+}
+body .music_Box .audio_Box .visual {
+  position: relative;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  -webkit-transform: scale(1.2) rotate(90deg);
+          transform: scale(1.2) rotate(90deg);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+.play .btn-play {
+  border-left: 80px solid green;
+  border-bottom: 50px solid transparent;
+  border-top: 50px solid transparent;
+  cursor: pointer;
+}
+.play .btn-pause {
+  border-right: 20px solid green;
+  border-left: 20px solid green;
+  height: 100px;
+  width: 75px;
+  cursor: pointer;
+}
+
+.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 0px;
+  height: 33px;
+  border-radius: 50%;
+  /* border-top: 24px solid #fff; */
+  /* border-right: 20px solid transparent; */
+  /* border-left: 20px solid transparent; */
+  -webkit-transform-origin: top left;
+  -webkit-box-shadow: 0px 0px 30px 21px rgb(255, 104, 62);
+  box-shadow: 0px -31px 41px 29px rgb(255, 104, 62);
+  transform-origin: top left;
+  -webkit-transition: 0.25s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
 
 .body_syntwave-grid {
-  -webkit-transform: rotate3d(1, 0, 0, 80deg);
-          transform: rotate3d(1, 0, 0, 80deg);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(39, 230, 255, 0.908) 3px, rgba(0, 0, 0, 0) 0px);
-  background-size: 100% 2em, 3em 7em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+  background-size: 5% 10%, 5% 10%;
   background-color: black;
   background-position: center;
-  top: 10%;
   height: 100%;
   position: absolute;
   width: 100%;
+  -webkit-animation: none;
+          animation: none;
+}
+@-webkit-keyframes gridAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+@keyframes gridAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
 .body_syntwave-grid:after {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(95%, rgba(0, 0, 0, 0.733)));
@@ -125,7 +229,7 @@ body:before {
   width: 100%;
 }
 .body_syntwave-grid:before {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(209, 0, 177, 0.5) 90%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 30%, rgba(153, 0, 95, 0.5) 90%);
   content: "";
   height: 100%;
   position: absolute;
@@ -133,6 +237,13 @@ body:before {
 }
 
 .syntwave-sun {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  border: 40px solid black;
   position: absolute;
   background-color: rgb(255, 104, 62);
   width: 370px;
@@ -142,8 +253,7 @@ body:before {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 12px 12px rgba(209, 0, 177, 0.5);
-          box-shadow: 0px 0px 12px 12px rgba(209, 0, 177, 0.5);
+  z-index: 1;
 }
 
 .body__inner {
