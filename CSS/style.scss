@@ -196,9 +196,11 @@
   }
 
   @mixin gridFlat{
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px); 
-      background-size: 5% 10%, 5% 10%;
-      background-color: black;
+      // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px); 
+      background: linear-gradient(180deg, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg,rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px); 
+
+      background-size: 100% 10%, 5% 100%;
+      // background-color: black;
       background-position: center;
       height: 100%;
       position: absolute;
@@ -206,6 +208,8 @@
   }
 
   // MIXINS //
+
+
 
 #register__form{
     .password__check{
@@ -241,13 +245,13 @@
     display: flex;
     justify-content: center;
     
-    &:before {
-     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
-     content: '';
-     height: 100%;
-     position: absolute;
-     width: 100%;
-    }
+    // &:before {
+    //  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
+    //  content: '';
+    //  height: 100%;
+    //  position: absolute;
+    //  width: 100%;
+    // }
 
     .music_Box{
       position: absolute;
@@ -339,9 +343,9 @@
     user-select: none;
     z-index: 0;
     // @include gridRotated();
-    @include gridFlat();
+    @include gridFlat;
 
-    animation: none;
+    animation: gridAnimation 10s linear infinite;
 
     @keyframes gridAnimation {
       0%{
@@ -352,24 +356,21 @@
       }
     }
 
-
-
+      // &:after {
+      //   background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0, 0, 0, 0.733) 95%);
+      //   content: '';
+      //    height: 100%;
+      //    position: absolute;
+      //    width: 100%;
+      //  }
       
-      &:after {
-        background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0, 0, 0, 0.733) 95%);
-        content: '';
-         height: 100%;
-         position: absolute;
-         width: 100%;
-       }
-      
-      &:before {
-       background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
-       content: '';
-       height: 100%;
-       position: absolute;
-       width: 100%;
-      }
+      // &:before {
+      //  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 30%,rgba(153, 0, 95, 0.5) 90%);     
+      //  content: '';
+      //  height: 100%;
+      //  position: absolute;
+      //  width: 100%;
+      // }
     }
   
 
